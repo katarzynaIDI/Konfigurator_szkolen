@@ -1,0 +1,2 @@
+[0808/094644.821:ERROR:http_transport_win.cc(273)] WinHttpSendRequest: Nie mo¿na okreœliæ nazwy serwera lub adresu. (0x2ee7)
+[0808/112929.602:ERROR:http_transport_win.cc(273)] WinHttpSendRequest: Nie mo¿na okreœliæ nazwy serwera lub adresu. (0x2ee7)
