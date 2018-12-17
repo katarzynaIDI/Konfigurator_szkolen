@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Router } from "@reach/router";
 import firebase from "firebase";
 import { DB_CONFIG } from "./database/db_config";
-//import ModulesData from "./modules_data";
 //import LandingPage from "./components/landingPageComponents/landing_page";
 import ThematicAreaNav from "./components/navbar_components/thematic_area_nav";
 import ThematicArea from "./components/single_module_components/thematic_area";
 import OrderList from "./components/order_list_components/order_list";
 import Footer from "./components/footer_components/footer";
 import AdminPanel from "./components/admin_components/admin_panel";
+import Preloader from "./components/preloader_components/preloader";
 
 let chosenModulesArray = [];
 
@@ -60,7 +60,7 @@ class Home extends Component {
     const { modules, loading, holdClickedModulesNames } = this.state;
     const { orderedModules } = this.props;
     return loading ? (
-      <div>loading...</div>
+      <Preloader />
     ) : (
       <div>
         <Router>

@@ -25,6 +25,7 @@ class SendMyList extends Component {
     this.senderPhoneNumber = React.createRef();
     this.senderPlaceOfTraining = React.createRef();
   }
+  //Form checkbox
   handleCheckboxChange(evt) {
     this.setState({ isCheckboxChecked: evt.target.checked });
   }
@@ -54,6 +55,7 @@ class SendMyList extends Component {
       isDayNineClosed
     } = this.props;
     let senderName = this.senderName.value;
+    //Preapere html request to be send
     let myhtml =
       `<p>Zamówienie od: <strong>${
         this.senderName.value
@@ -606,13 +608,15 @@ class SendMyList extends Component {
               .map(e => `<li>${e}</li>`)
               .join("")}</ul>`
       }`;
+    //Send e-mail
     fetch(
       `http://172.20.10.2:4005/send-email?recipient=${email.recipient}&sender=${
         email.sender
       }&topic=${email.subject}&html=${myhtml}&senderName=${senderName}`,
       { mode: "no-cors" }
     ).catch(err => console.log(err));
-    alert(`Zamówienie zostało wysłane na adres ${email.sender}
+    //Info after sending e-mail
+    alert(`Zamówienie zostało wysłane!
 Wkrótce skontaktujemy się z Państwem!`);
   };
 
@@ -633,7 +637,6 @@ Wkrótce skontaktujemy się z Państwem!`);
               inputRef={ref => (this.senderName = ref)}
             />
           </FormGroup>
-
           <FormGroup>
             <ControlLabel className="send-my-list__form-input-label">
               Adres e-mail:
@@ -653,7 +656,6 @@ Wkrótce skontaktujemy się z Państwem!`);
               }
             />
           </FormGroup>
-
           <FormGroup>
             <ControlLabel className="send-my-list__form-input-label">
               Telefon kontaktowy:
@@ -665,7 +667,6 @@ Wkrótce skontaktujemy się z Państwem!`);
               inputRef={ref => (this.senderPhoneNumber = ref)}
             />
           </FormGroup>
-
           <FormGroup>
             <ControlLabel className="send-my-list__form-input-label">
               Miejscowość szkolenia:
@@ -677,7 +678,6 @@ Wkrótce skontaktujemy się z Państwem!`);
               inputRef={ref => (this.senderPlaceOfTraining = ref)}
             />
           </FormGroup>
-
           <FormGroup>
             <ControlLabel className="send-my-list__form-input-label">
               Dodatkowe informacje:

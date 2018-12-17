@@ -3,6 +3,8 @@ import { Link, animateScroll as scroller } from "react-scroll";
 import logo_CPAB from "../../logos/logo_CPAB.png";
 import down_drop_arrow from "../../logos/down-drop-1.png";
 
+//Client still doesn't know whether want or not starting page
+
 class LandingPage extends Component {
   scrollTo() {
     scroller.scrollTo("scroll-to-element", {

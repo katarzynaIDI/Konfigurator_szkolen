@@ -4,16 +4,15 @@ import ShowModuleDetails from "./show_module_details";
 class SingleModule extends Component {
   constructor(props) {
     super(props);
-
     this.handleAddModuleToList = this.handleAddModuleToList.bind(this);
     this.isButtonDisabled = this.isButtonDisabled.bind(this);
   }
-
   handleAddModuleToList() {
     this.props.moveModuleNameUpToThematicArea(this.props.name);
   }
   isButtonDisabled = (chosenModulesNames, name) =>
     chosenModulesNames.includes(name);
+
   render() {
     const { chosenModulesNames, name } = this.props;
     return (

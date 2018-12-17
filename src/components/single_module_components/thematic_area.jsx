@@ -12,7 +12,7 @@ class ThematicArea extends Component {
   takeModuleNameFromSingleModule(value) {
     this.props.moveModuleNameUpToApp(value);
   }
-
+  //Ordering array by Thematic Area
   orderedModules = _.groupBy(this.props.modules, thematicArea => {
     return thematicArea.thematicArea;
   });
@@ -36,7 +36,7 @@ class ThematicArea extends Component {
                       }
                       clickedModuleNames={this.props.clickedModuleNames}
                       chosenModulesNames={this.props.chosenModulesNames}
-                      key={f && f.id} //probably key={f.id} is enough
+                      key={f && f.id} //probably key={f.id} is enough, but just in case let it be...
                       {...f}
                     />
                   ))}

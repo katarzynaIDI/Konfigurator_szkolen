@@ -4,19 +4,15 @@ import { Modal, Button } from "react-bootstrap";
 class ShowModuleDetails extends Component {
   constructor(props, context) {
     super(props, context);
-
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
     this.state = {
       show: false
     };
   }
-
   handleClose() {
     this.setState({ show: false });
   }
-
   handleShow() {
     this.setState({ show: true });
   }
@@ -28,7 +24,6 @@ class ShowModuleDetails extends Component {
         <div className="single-module__details" onClick={this.handleShow}>
           <div className="single-module__details-info-display">Szczegóły </div>
         </div>
-
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title className="single-module__details-modal-header">
@@ -44,7 +39,6 @@ class ShowModuleDetails extends Component {
                 {e}
               </li>
             ))}
-
             <p />
           </Modal.Body>
           <Modal.Footer>

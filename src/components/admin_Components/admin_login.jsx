@@ -22,7 +22,6 @@ class AdminLogin extends Component {
 
   login(e) {
     e.preventDefault();
-    //firebase.initializeApp(DB_CONFIG);
     firebase
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)

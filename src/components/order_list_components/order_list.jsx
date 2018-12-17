@@ -14,54 +14,44 @@ class OrerList extends Component {
       showCloseDayOneInfo: false,
       showCloseDayInfo: false
     };
-
     this.isDayOneClosed = this.isDayTwoClosed = this.isDayThreeClosed = this.isDayFourClosed = this.isDayFiveClosed = this.isDaySixClosed = this.isDaySevenClosed = this.isDayEightClosed = this.isDayNineClosed = this.isDayTenClosed = false;
-
     this.dayOneDuration = this.dayTwoDuration = this.dayThreeDuration = this.dayFourDuration = this.dayFiveDuration = this.daySixDuration = this.daySevenDuration = this.dayEightDuration = this.dayNineDuration = this.dayTenDuration = 0;
-
     this.setedDayOneDuration = this.setedDayTwoDuration = this.setedDayThreeDuration = this.setedDayFourDuration = this.setedDayFiveDuration = this.setedDaySixDuration = this.setedDaySevenDuration = this.setedDayEightDuration = this.setedDayNineDuration = this.setedDayTenDuration = 4;
-
     this.handleShowCloseDayOneInfo = this.handleShowCloseDayOneInfo.bind(this);
     this.handleCloseCloseDayOneInfo = this.handleCloseCloseDayOneInfo.bind(
       this
     );
     this.handleShowCloseDayInfo = this.handleShowCloseDayInfo.bind(this);
   }
-
   handleCloseCloseDayOneInfo() {
     this.setState({ showCloseDayOneInfo: false });
   }
   handleShowCloseDayOneInfo() {
     this.setState({ showCloseDayOneInfo: true });
   }
-
   handleShowCloseDayInfo() {
     this.setState({ showCloseDayInfo: true });
-
+    //Set info modal duration
     setTimeout(() => this.setState({ showCloseDayInfo: false }), 2000);
   }
 
   render() {
     let numberOfAddedModules = this.props.chosenModulesNames.length;
-
     /*-----------------------------------------------------------------*\
       buttons handlers
     \*-----------------------------------------------------------------*/
-
     this.handleCloseDayOne = () => {
       this.isDayOneClosed = true;
       this.setedDayOneDuration = numberOfAddedModules;
       this.closedDayOne = true;
       this.handleShowCloseDayOneInfo();
     };
-
     this.handleCloseDayTwo = () => {
       this.isDayTwoClosed = true;
       this.setedDayTwoDuration =
         numberOfAddedModules - this.setedDayOneDuration;
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDayThree = () => {
       this.isDayThreeClosed = true;
       this.setedDayThreeDuration =
@@ -69,7 +59,6 @@ class OrerList extends Component {
         (this.setedDayOneDuration + this.setedDayTwoDuration);
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDayFour = () => {
       this.isDayFourClosed = true;
       this.setedDayFourDuration =
@@ -79,7 +68,6 @@ class OrerList extends Component {
           this.setedDayThreeDuration);
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDayFive = () => {
       this.isDayFiveClosed = true;
       this.setedDayFiveDuration =
@@ -90,7 +78,6 @@ class OrerList extends Component {
           this.setedDayFourDuration);
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDaySix = () => {
       this.isDaySixClosed = true;
       this.setedDaySixDuration =
@@ -102,7 +89,6 @@ class OrerList extends Component {
           this.setedDayFiveDuration);
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDaySeven = () => {
       this.isDaySevenClosed = true;
       this.setedDaySevenDuration =
@@ -115,7 +101,6 @@ class OrerList extends Component {
           this.setedDaySixDuration);
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDayEight = () => {
       this.isDayEightClosed = true;
       this.setedDayEightDuration =
@@ -129,7 +114,6 @@ class OrerList extends Component {
           this.setedDaySevenDuration);
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDayNine = () => {
       this.isDayNineClosed = true;
       this.setedDayNineDuration =
@@ -144,7 +128,6 @@ class OrerList extends Component {
           this.setedDayEightDuration);
       this.handleShowCloseDayInfo();
     };
-
     this.handleCloseDayTen = () => {
       this.isDayTenClosed = true;
       this.setedDayTenDuration =
@@ -160,33 +143,20 @@ class OrerList extends Component {
           this.setedDayNineDuration);
       this.handleShowCloseDayInfo();
     };
-
-    /*---------------------------------------------------------------------------------------------------------------*\
-      logic of counting dayDuration and when isDayClosed is true/false by achiving maximum day capability (4 modules)
-    \*---------------------------------------------------------------------------------------------------------------*/
-
+    /*----------------------------------------------------------------------------------------------------------------------*\
+      logic of counting dayDuration and when isDayClosed is true/false by achiving maximum day capability (set to 4 modules)
+    \*----------------------------------------------------------------------------------------------------------------------*/
     //Day One
     numberOfAddedModules < 4 && this.isDayOneClosed === false
       ? (this.dayOneDuration = numberOfAddedModules)
       : ((this.isDayOneClosed = true),
         (this.dayOneDuration = this.setedDayOneDuration));
-    /*
-    this.isDayTwoClosed !== true
-      ? numberOfAddedModules < this.dayOneDuration + 4
-        ? (this.isDayTwoClosed === false,
-          (this.dayTwoDuration = numberOfAddedModules - this.dayOneDuration))
-        : (this.isDayTwoClosed === true,
-          (this.dayTwoDuration = this.setedDayTwoDuration))
-      : (this.dayTwoDuration = this.setedDayTwoDuration);
-*/
-
     //Day Two
     numberOfAddedModules < this.dayOneDuration + this.setedDayTwoDuration
       ? (this.isDayTwoClosed === false,
         (this.dayTwoDuration = numberOfAddedModules - this.dayOneDuration))
       : (this.isDayTwoClosed === true,
         (this.dayTwoDuration = this.setedDayTwoDuration));
-
     //Day Three
     numberOfAddedModules <
     this.dayOneDuration + this.dayTwoDuration + this.setedDayThreeDuration
@@ -195,7 +165,6 @@ class OrerList extends Component {
           numberOfAddedModules - (this.dayOneDuration + this.dayTwoDuration)))
       : (this.isDayThreeClosed === true,
         (this.dayThreeDuration = this.setedDayThreeDuration));
-
     //Day Four
     numberOfAddedModules <
     this.dayOneDuration +
@@ -208,7 +177,6 @@ class OrerList extends Component {
           (this.dayOneDuration + this.dayTwoDuration + this.dayThreeDuration)))
       : (this.isDayFourClosed === true,
         (this.dayFourDuration = this.setedDayFourDuration));
-
     //Day Five
     numberOfAddedModules <
     this.dayOneDuration +
@@ -225,7 +193,6 @@ class OrerList extends Component {
             this.dayFourDuration)))
       : (this.isDayFiveClosed === true,
         (this.dayFiveDuration = this.setedDayFiveDuration));
-
     //Day Six
     numberOfAddedModules <
     this.dayOneDuration +
@@ -244,7 +211,6 @@ class OrerList extends Component {
             this.dayFiveDuration)))
       : (this.isDaySixClosed === true,
         (this.daySixDuration = this.setedDaySixDuration));
-
     //Day Seven
     numberOfAddedModules <
     this.dayOneDuration +
@@ -265,7 +231,6 @@ class OrerList extends Component {
             this.daySixDuration)))
       : (this.isDaySevenClosed === true,
         (this.daySevenDuration = this.setedDaySevenDuration));
-
     //Day Eight
     numberOfAddedModules <
     this.dayOneDuration +
@@ -288,7 +253,6 @@ class OrerList extends Component {
             this.daySevenDuration)))
       : (this.isDayEightClosed === true,
         (this.dayEightDuration = this.setedDayEightDuration));
-
     //Day Nine
     numberOfAddedModules <
     this.dayOneDuration +
@@ -313,7 +277,6 @@ class OrerList extends Component {
             this.dayEightDuration)))
       : (this.isDayNineClosed === true,
         (this.dayNineDuration = this.setedDayNineDuration));
-
     //Day Ten
     numberOfAddedModules <
     this.dayOneDuration +
@@ -340,11 +303,9 @@ class OrerList extends Component {
             this.dayNineDuration)))
       : (this.isDayTenClosed === true,
         (this.dayTenDuration = this.setedDayTenDuration));
-
     /*---------------------------------------------------------*\
       turning isDayClosed to 'false' when removing modules
     \*---------------------------------------------------------*/
-
     //Day One
     this.dayOneDuration > numberOfAddedModules
       ? ((this.isDayOneClosed = false),
@@ -354,77 +315,64 @@ class OrerList extends Component {
       ? (this.dayOneDuration = numberOfAddedModules)
       : ((this.isDayOneClosed = true),
         (this.dayOneDuration = this.setedDayOneDuration));
-
     //Day Two
     this.dayTwoDuration < this.setedDayTwoDuration
       ? ((this.isDayTwoClosed = false), (this.setedDayTwoDuration = 4))
       : ((this.isDayTwoClosed = true),
         (this.dayTwoDuration = this.setedDayTwoDuration));
-
     //Day Three
     this.dayThreeDuration < this.setedDayThreeDuration
       ? ((this.isDayThreeClosed = false), (this.setedDayThreeDuration = 4))
       : ((this.isDayThreeClosed = true),
         (this.dayThreeDuration = this.setedDayThreeDuration));
-
     //Day Four
     this.dayFourDuration < this.setedDayFourDuration
       ? ((this.isDayFourClosed = false), (this.setedDayFourDuration = 4))
       : ((this.isDayFourClosed = true),
         (this.dayFourDuration = this.setedDayFourDuration));
-
     //Day Five
     this.dayFiveDuration < this.setedDayFiveDuration
       ? ((this.isDayFiveClosed = false), (this.setedDayFiveDuration = 4))
       : ((this.isDayFiveClosed = true),
         (this.dayFiveDuration = this.setedDayFiveDuration));
-
     //Day Six
     this.daySixDuration < this.setedDaySixDuration
       ? ((this.isDaySixClosed = false), (this.setedDaySixDuration = 4))
       : ((this.isDaySixClosed = true),
         (this.daySixDuration = this.setedDaySixDuration));
-
     //Day Seven
     this.daySevenDuration < this.setedDaySevenDuration
       ? ((this.isDaySevenClosed = false), (this.setedDaySevenDuration = 4))
       : ((this.isDaySevenClosed = true),
         (this.daySevenDuration = this.setedDaySevenDuration));
-
     //Day Eight
     this.dayEightDuration < this.setedDayEightDuration
       ? ((this.isDayEightClosed = false), (this.setedDayEightDuration = 4))
       : ((this.isDayEightClosed = true),
         (this.dayEightDuration = this.setedDayEightDuration));
-
     //Day Nine
     this.dayNineDuration < this.setedDayNineDuration
       ? ((this.isDayNineClosed = false), (this.setedDayNineDuration = 4))
       : ((this.isDayNineClosed = true),
         (this.dayNineDuration = this.setedDayNineDuration));
-
     //Day Ten
     this.dayTenDuration < this.setedDayTenDuration
       ? ((this.isDayTenClosed = false), (this.setedDayTenDuration = 4))
       : ((this.isDayTenClosed = true),
         (this.dayTenDuration = this.setedDayTenDuration));
-
     /*---------------------------------------------------------------------*\
       preventing dayDuration be less then 0 and more then setedDayDuration
     \*----------------------------------------------------------------------*/
-
     //Day One
     this.dayTwoDuration < 0
       ? (this.dayTwoDuration = 0)
       : (this.dayTwoDuration = numberOfAddedModules - this.dayOneDuration);
-
     //Day Two
     this.dayTwoDuration >= this.setedDayTwoDuration
       ? (this.dayTwoDuration = this.setedDayTwoDuration)
       : this.dayTwoDuration < 0
       ? (this.dayTwoDuration = 0)
       : (this.dayTwoDuration = numberOfAddedModules - this.dayOneDuration);
-
     //Day Three
     this.dayThreeDuration >= this.setedDayThreeDuration
       ? (this.dayThreeDuration = this.setedDayThreeDuration)
@@ -432,7 +380,6 @@ class OrerList extends Component {
       ? (this.dayThreeDuration = 0)
       : (this.dayThreeDuration =
           numberOfAddedModules - (this.dayOneDuration + this.dayTwoDuration));
-
     //Day Four
     this.dayFourDuration >= this.setedDayFourDuration
       ? (this.dayFourDuration = this.setedDayFourDuration)
@@ -441,7 +388,6 @@ class OrerList extends Component {
       : (this.dayFourDuration =
           numberOfAddedModules -
           (this.dayOneDuration + this.dayTwoDuration + this.dayThreeDuration));
-
     //Day Five
     this.dayFiveDuration >= this.setedDayFiveDuration
       ? (this.dayFiveDuration = this.setedDayFiveDuration)
@@ -453,7 +399,6 @@ class OrerList extends Component {
             this.dayTwoDuration +
             this.dayThreeDuration +
             this.dayFourDuration));
-
     //Day Six
     this.daySixDuration >= this.setedDaySixDuration
       ? (this.daySixDuration = this.setedDaySixDuration)
@@ -466,7 +411,6 @@ class OrerList extends Component {
             this.dayThreeDuration +
             this.dayFourDuration +
             this.dayFiveDuration));
-
     //Day Seven
     this.daySevenDuration >= this.setedDaySevenDuration
       ? (this.daySevenDuration = this.setedDaySevenDuration)
@@ -480,7 +424,6 @@ class OrerList extends Component {
             this.dayFourDuration +
             this.dayFiveDuration +
             this.daySixDuration));
-
     //Day Eight
     this.dayEightDuration >= this.setedDayEightDuration
       ? (this.dayEightDuration = this.setedDayEightDuration)
@@ -495,7 +438,6 @@ class OrerList extends Component {
             this.dayFiveDuration +
             this.daySixDuration +
             this.daySevenDuration));
-
     //Day Nine
     this.dayNineDuration >= this.setedDayNineDuration
       ? (this.dayNineDuration = this.setedDayNineDuration)
@@ -511,7 +453,6 @@ class OrerList extends Component {
             this.daySixDuration +
             this.daySevenDuration +
             this.dayEightDuration));
-
     //Day Ten
     this.dayTenDuration >= this.setedDayTenDuration
       ? (this.dayTenDuration = this.setedDayTenDuration)
@@ -532,7 +473,6 @@ class OrerList extends Component {
     return (
       <div className="order-list">
         <HelpModal />
-
         <h2 className="order-list__header">Twoje szkolenie:</h2>
         <ListGroup>
           <CloseDayOneInfoModal
@@ -548,7 +488,7 @@ class OrerList extends Component {
               {" "}
               Dodaj pierwszy moduł z listy po lewej!
             </ListGroupItem>
-          ) : //******Day One************Day One************Day One************Day One************Day One************Day One******
+          ) : //******Day_One************Day_One************Day_One************Day_One************Day_One************Day_One******
           this.isDayOneClosed !== true || this.dayTwoDuration === 0 ? (
             <div>
               <OrderListSingleDay

@@ -3,9 +3,7 @@ import _ from "lodash";
 import { Panel, Button } from "react-bootstrap";
 
 class ModulesList extends Component {
-  constructor(props) {
-    super(props);
-  }
+  //Ordering array by Thematic Area
   orderedModules = _.groupBy(this.props.modules, thematicArea => {
     return thematicArea.thematicArea;
   });
@@ -16,8 +14,6 @@ class ModulesList extends Component {
     };
     return (
       <div>
-        {/*console.log(Object.keys(this.props.modules).map(e => e))*/}
-        {console.log(this.props.getModules)}
         {this.orderedModules &&
           Object.keys(this.orderedModules).map(e => (
             <Panel bsStyle="warning" defaultExpanded>
