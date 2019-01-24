@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Router } from "@reach/router";
 import firebase from "firebase";
 import { DB_CONFIG } from "./database/db_config";
 //import LandingPage from "./components/landingPageComponents/landing_page";
@@ -9,13 +8,13 @@ import OrderList from "./components/order_list_components/order_list";
 import Footer from "./components/footer_components/footer";
 import AdminPanel from "./components/admin_components/admin_panel";
 import Preloader from "./components/preloader_components/preloader";
+//import Logo from "./logos/logo_CPAB.png";
 
 let chosenModulesArray = [];
 
 class Home extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       holdClickedModulesNames: chosenModulesArray,
       modules: [],
@@ -45,17 +44,14 @@ class Home extends Component {
       .initializeApp(DB_CONFIG)
       .database()
       .ref();
-
     ref.once("value").then(dataSnapshot => {
       this.response = dataSnapshot.val()["modulesData"];
       this.setState({ modules: this.response, loading: false });
     });
   }
-
   componentDidMount() {
     this.getModules();
   }
-
   render() {
     const { modules, loading, holdClickedModulesNames } = this.state;
     const { orderedModules } = this.props;
@@ -63,10 +59,8 @@ class Home extends Component {
       <Preloader />
     ) : (
       <div>
-        <Router>
-          <AdminPanel path="/admin" />
-        </Router>
-        {/*<LandingPage />*/}
+        {/*<LandingPage />
+        <img src={Logo} />*/}
         <ThematicAreaNav modules={this.state.modules} />
         <div className="main-layout">
           <ThematicArea
@@ -76,7 +70,6 @@ class Home extends Component {
             clickedModuleNames={holdClickedModulesNames}
             chosenModulesNames={holdClickedModulesNames}
           />
-
           <OrderList
             clickedModuleNames={holdClickedModulesNames}
             chosenModulesNames={holdClickedModulesNames}

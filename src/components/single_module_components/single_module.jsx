@@ -12,7 +12,6 @@ class SingleModule extends Component {
   }
   isButtonDisabled = (chosenModulesNames, name) =>
     chosenModulesNames.includes(name);
-
   render() {
     const { chosenModulesNames, name } = this.props;
     return (

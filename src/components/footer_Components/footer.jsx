@@ -32,7 +32,6 @@ const Footer = () => {
           />
           www.cpab.pl
         </a>
-
         <p>
           {" "}
           <img

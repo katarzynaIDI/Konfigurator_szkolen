@@ -20,7 +20,7 @@ class AdminPanel extends Component {
     this.authListener();
   }
   authListener() {
-    //Check if user is logged in or not
+    //**** Check if user is logged in or not ****\\
     firebase.auth().onAuthStateChanged(user => {
       user ? this.setState({ user }) : this.setState({ user: null });
     });
