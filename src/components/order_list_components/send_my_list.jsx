@@ -14,7 +14,7 @@ class SendMyList extends Component {
     this.state = {
       isCheckboxChecked: false,
       email: {
-        recipient: "kellycmi62@gmail.com",
+        recipient: "kamil.sobieraj.dev@gmail.com",
         sender: "",
         subject: "Konfigurator - Zamówienie od "
       }
@@ -25,12 +25,12 @@ class SendMyList extends Component {
     this.senderPhoneNumber = React.createRef();
     this.senderPlaceOfTraining = React.createRef();
   }
-  //Form checkbox
+  //**** Form checkbox ****\\
   handleCheckboxChange(evt) {
     this.setState({ isCheckboxChecked: evt.target.checked });
   }
   sendEmail = _ => {
-    //DESTRUCTURING
+    //**** DESTRUCTURING ****\\
     const { email } = this.state;
     const {
       chosenModulesNames,
@@ -55,12 +55,14 @@ class SendMyList extends Component {
       isDayNineClosed
     } = this.props;
     let senderName = this.senderName.value;
-    //Preapere html request to be send
+    //**** Preapere html request to be send ****\\
     let myhtml =
       `<p>Zamówienie od: <strong>${
         this.senderName.value
       }</strong></p><p>Telefon kontaktowy: ${
         this.senderPhoneNumber.value
+      }</p></strong></p><p>Adres e-mail: ${
+        email.sender
       }</p><p>Miejsce szkolenia: ${
         this.senderPlaceOfTraining.value
       }</p><p>Wiadomość od zamawiającego: <p>"${this.senderMessage.value.replace(
@@ -608,9 +610,9 @@ class SendMyList extends Component {
               .map(e => `<li>${e}</li>`)
               .join("")}</ul>`
       }`;
-    //Send e-mail
+    //**** Send an e-mail ****\\
     fetch(
-      `http://172.20.10.2:4005/send-email?recipient=${email.recipient}&sender=${
+      `http://localhost:4005/send-email?recipient=${email.recipient}&sender=${
         email.sender
       }&topic=${email.subject}&html=${myhtml}&senderName=${senderName}`,
       { mode: "no-cors" }
@@ -619,7 +621,6 @@ class SendMyList extends Component {
     alert(`Zamówienie zostało wysłane!
 Wkrótce skontaktujemy się z Państwem!`);
   };
-
   render() {
     const { email } = this.state;
     return (
@@ -695,7 +696,22 @@ Wkrótce skontaktujemy się z Państwem!`);
               checked={this.state.isCheckboxChecked}
               onChange={this.handleCheckboxChange}
             >
-              Potwierdzam, że zapoznałęm się i zgadzam się...
+              Wyrażam zgodę na przetwarzanie przez CPAB SP. z o.o. ul.
+              Jagiellońska 24/3, 40-032 Katowice, e-mail: biuro@cpab.pl, moich
+              danych osobowych zawartych na niniejszym formularzu w celu
+              komunikacji. Zostałam/em poinformowana/y, że przysługuje mi prawo
+              do cofnięcia zgody na przetwarzanie danych osobowych w dowolnym
+              momencie. Cofnięcie zgody nie będzie miało wpływu na
+              przetwarzanie, którego dokonano na podstawie zgody przed jej
+              cofnięciem. ponadto zapoznałem się z resztą{" "}
+              <a
+                href="https://cpab.pl/obowiazek-informacyjny/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                informacji
+              </a>
+              .
             </Checkbox>
           </FormGroup>
           <FormGroup>

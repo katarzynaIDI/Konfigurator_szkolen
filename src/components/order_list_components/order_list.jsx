@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import OrderListSingleDay from "./order_list_single_day";
 import SendMyList from "./send_my_list";
-import HelpModal from "../navbar_components/help_modal";
+import HelpModal from "./help_modal";
 import CloseDayTooltip from "./close_day_tooltip";
 import CloseDayOneInfoModal from "./close_day_one_info_modal";
 import CloseDayInfoModal from "./close_day_info_modal";
@@ -31,7 +31,7 @@ class OrerList extends Component {
   }
   handleShowCloseDayInfo() {
     this.setState({ showCloseDayInfo: true });
-    //Set info modal duration
+    //**** Set info modal duration ****\\
     setTimeout(() => this.setState({ showCloseDayInfo: false }), 2000);
   }
 
@@ -147,17 +147,20 @@ class OrerList extends Component {
       logic of counting dayDuration and when isDayClosed is true/false by achiving maximum day capability (set to 4 modules)
     \*----------------------------------------------------------------------------------------------------------------------*/
     //Day One
+    // eslint-disable-next-line
     numberOfAddedModules < 4 && this.isDayOneClosed === false
       ? (this.dayOneDuration = numberOfAddedModules)
       : ((this.isDayOneClosed = true),
         (this.dayOneDuration = this.setedDayOneDuration));
     //Day Two
+    // eslint-disable-next-line
     numberOfAddedModules < this.dayOneDuration + this.setedDayTwoDuration
       ? (this.isDayTwoClosed === false,
         (this.dayTwoDuration = numberOfAddedModules - this.dayOneDuration))
       : (this.isDayTwoClosed === true,
         (this.dayTwoDuration = this.setedDayTwoDuration));
     //Day Three
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration + this.dayTwoDuration + this.setedDayThreeDuration
       ? (this.isDayThreeClosed === false,
@@ -166,6 +169,7 @@ class OrerList extends Component {
       : (this.isDayThreeClosed === true,
         (this.dayThreeDuration = this.setedDayThreeDuration));
     //Day Four
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration +
       this.dayTwoDuration +
@@ -178,6 +182,7 @@ class OrerList extends Component {
       : (this.isDayFourClosed === true,
         (this.dayFourDuration = this.setedDayFourDuration));
     //Day Five
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration +
       this.dayTwoDuration +
@@ -194,6 +199,7 @@ class OrerList extends Component {
       : (this.isDayFiveClosed === true,
         (this.dayFiveDuration = this.setedDayFiveDuration));
     //Day Six
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration +
       this.dayTwoDuration +
@@ -212,6 +218,7 @@ class OrerList extends Component {
       : (this.isDaySixClosed === true,
         (this.daySixDuration = this.setedDaySixDuration));
     //Day Seven
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration +
       this.dayTwoDuration +
@@ -232,6 +239,7 @@ class OrerList extends Component {
       : (this.isDaySevenClosed === true,
         (this.daySevenDuration = this.setedDaySevenDuration));
     //Day Eight
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration +
       this.dayTwoDuration +
@@ -254,6 +262,7 @@ class OrerList extends Component {
       : (this.isDayEightClosed === true,
         (this.dayEightDuration = this.setedDayEightDuration));
     //Day Nine
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration +
       this.dayTwoDuration +
@@ -278,6 +287,7 @@ class OrerList extends Component {
       : (this.isDayNineClosed === true,
         (this.dayNineDuration = this.setedDayNineDuration));
     //Day Ten
+    // eslint-disable-next-line
     numberOfAddedModules <
     this.dayOneDuration +
       this.dayTwoDuration +
@@ -302,11 +312,13 @@ class OrerList extends Component {
             this.dayEightDuration +
             this.dayNineDuration)))
       : (this.isDayTenClosed === true,
+        // eslint-disable-next-line
         (this.dayTenDuration = this.setedDayTenDuration));
     /*---------------------------------------------------------*\
       turning isDayClosed to 'false' when removing modules
     \*---------------------------------------------------------*/
     //Day One
+    // eslint-disable-next-line
     this.dayOneDuration > numberOfAddedModules
       ? ((this.isDayOneClosed = false),
         (this.dayOneDuration = numberOfAddedModules),
@@ -316,46 +328,55 @@ class OrerList extends Component {
       : ((this.isDayOneClosed = true),
         (this.dayOneDuration = this.setedDayOneDuration));
     //Day Two
+    // eslint-disable-next-line
     this.dayTwoDuration < this.setedDayTwoDuration
       ? ((this.isDayTwoClosed = false), (this.setedDayTwoDuration = 4))
       : ((this.isDayTwoClosed = true),
         (this.dayTwoDuration = this.setedDayTwoDuration));
     //Day Three
+    // eslint-disable-next-line
     this.dayThreeDuration < this.setedDayThreeDuration
       ? ((this.isDayThreeClosed = false), (this.setedDayThreeDuration = 4))
       : ((this.isDayThreeClosed = true),
         (this.dayThreeDuration = this.setedDayThreeDuration));
     //Day Four
+    // eslint-disable-next-line
     this.dayFourDuration < this.setedDayFourDuration
       ? ((this.isDayFourClosed = false), (this.setedDayFourDuration = 4))
       : ((this.isDayFourClosed = true),
         (this.dayFourDuration = this.setedDayFourDuration));
     //Day Five
+    // eslint-disable-next-line
     this.dayFiveDuration < this.setedDayFiveDuration
       ? ((this.isDayFiveClosed = false), (this.setedDayFiveDuration = 4))
       : ((this.isDayFiveClosed = true),
         (this.dayFiveDuration = this.setedDayFiveDuration));
     //Day Six
+    // eslint-disable-next-line
     this.daySixDuration < this.setedDaySixDuration
       ? ((this.isDaySixClosed = false), (this.setedDaySixDuration = 4))
       : ((this.isDaySixClosed = true),
         (this.daySixDuration = this.setedDaySixDuration));
     //Day Seven
+    // eslint-disable-next-line
     this.daySevenDuration < this.setedDaySevenDuration
       ? ((this.isDaySevenClosed = false), (this.setedDaySevenDuration = 4))
       : ((this.isDaySevenClosed = true),
         (this.daySevenDuration = this.setedDaySevenDuration));
     //Day Eight
+    // eslint-disable-next-line
     this.dayEightDuration < this.setedDayEightDuration
       ? ((this.isDayEightClosed = false), (this.setedDayEightDuration = 4))
       : ((this.isDayEightClosed = true),
         (this.dayEightDuration = this.setedDayEightDuration));
     //Day Nine
+    // eslint-disable-next-line
     this.dayNineDuration < this.setedDayNineDuration
       ? ((this.isDayNineClosed = false), (this.setedDayNineDuration = 4))
       : ((this.isDayNineClosed = true),
         (this.dayNineDuration = this.setedDayNineDuration));
     //Day Ten
+    // eslint-disable-next-line
     this.dayTenDuration < this.setedDayTenDuration
       ? ((this.isDayTenClosed = false), (this.setedDayTenDuration = 4))
       : ((this.isDayTenClosed = true),
@@ -469,7 +490,6 @@ class OrerList extends Component {
             this.daySevenDuration +
             this.dayEightDuration +
             this.dayNineDuration));
-
     return (
       <div className="order-list">
         <HelpModal />

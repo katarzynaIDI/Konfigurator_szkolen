@@ -16,7 +16,6 @@ class ShowModuleDetails extends Component {
   handleShow() {
     this.setState({ show: true });
   }
-
   render() {
     const details = this.props.details;
     return (

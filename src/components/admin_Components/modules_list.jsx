@@ -3,7 +3,7 @@ import _ from "lodash";
 import { Panel, Button } from "react-bootstrap";
 
 class ModulesList extends Component {
-  //Ordering array by Thematic Area
+  //**** Ordering array by Thematic Area ****\\
   orderedModules = _.groupBy(this.props.modules, thematicArea => {
     return thematicArea.thematicArea;
   });
@@ -14,13 +14,12 @@ class ModulesList extends Component {
     };
     return (
       <div>
+        {console.log(window.location)}
         {this.orderedModules &&
           Object.keys(this.orderedModules).map(e => (
-            <Panel bsStyle="warning" defaultExpanded>
+            <Panel bsStyle="warning" defaultExpanded key={e}>
               <Panel.Heading>
-                <Panel.Title toggle key={e}>
-                  {e}
-                </Panel.Title>
+                <Panel.Title toggle>{e}</Panel.Title>
               </Panel.Heading>
               <Panel.Collapse>
                 <Panel.Body>
@@ -41,7 +40,6 @@ class ModulesList extends Component {
               </Panel.Collapse>
             </Panel>
           ))}
-        {/*<button onClick={this.removeModuleFromDB()}>Usuń</button>*/}
       </div>
     );
   }

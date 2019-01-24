@@ -1,4 +1,4 @@
-require("dotenv").config();
+//require("dotenv").config();
 
 export const DB_CONFIG = {
   apiKey: process.env.REACT_APP_DB_APIKEY,

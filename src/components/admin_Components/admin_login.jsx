@@ -19,7 +19,6 @@ class AdminLogin extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.login = this.login.bind(this);
   }
-
   login(e) {
     e.preventDefault();
     firebase
@@ -28,7 +27,6 @@ class AdminLogin extends Component {
       .then(user => {})
       .catch(error => console.log(error));
   }
-
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }

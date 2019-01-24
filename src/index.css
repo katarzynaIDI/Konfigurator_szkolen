@@ -179,7 +179,7 @@ body {
   z-index: 2;
   font-size: 1.3vw;
   box-shadow: 0 0 25px 1px #000000;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 0 0 5px 5px;
   background: linear-gradient(to bottom, #f9f9f9 0%, #ededed 50%, #f9f9f9 100%);
   color: black;
   padding: 10px; }
@@ -190,11 +190,11 @@ body {
     display: grid;
     grid-template-columns: 25% auto; }
 
-.thematic-area-nav__header {
-  text-transform: uppercase;
+.thematic-area-nav__logo {
   grid-column: 1/2;
   align-self: center;
-  font-weight: 700; }
+  width: 100%;
+  height: 150%; }
 
 .thematic-area-nav__areas {
   grid-column: 2/3;
@@ -253,6 +253,22 @@ body {
   animation: help-animation 4s ease-in-out infinite; }
   .order-list__help:hover {
     cursor: pointer; }
+
+.help-modal__infograpgic {
+  width: 100%; }
+
+.help-modal__close-btn {
+  float: right;
+  width: 1em;
+  height: 2em;
+  position: relative; }
+  .help-modal__close-btn > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 .order-list__header {
   border-bottom: 1px solid #dfdede;
@@ -397,7 +413,7 @@ input[type="checkbox"] {
 .single-module {
   background-color: #f9f9f9;
   min-height: 13vw;
-  border-radius: 5%;
+  border-radius: 3%;
   transition: all 1s ease;
   box-shadow: 0 0 15px 1px #000000;
   display: flex;
@@ -622,14 +638,16 @@ body {
     grid-template-columns: 60vw 40vw;
     grid-template-rows: 15vh auto; }
   .thematic-area-nav {
-    width: 60vw;
+    width: 100vw;
     padding: 5px;
-    display: flex; }
+    display: flex;
+    border-radius: 0;
+    margin-bottom: 20px; }
     .thematic-area-nav > ul {
       display: flex;
       padding: 0;
       margin-bottom: 0; }
-  .thematic-area-nav__header {
+  .thematic-area-nav__logo {
     position: absolute;
     opacity: 0; }
   .thematic-area-nav__areas {
@@ -639,7 +657,7 @@ body {
     justify-content: space-around;
     height: 100%; }
     .thematic-area-nav__areas > button {
-      width: 75%;
+      width: 45%;
       font-size: 3vw;
       margin: 5px; }
   .order-list {
@@ -664,6 +682,8 @@ body {
   .order-list__single-day-remove-button {
     height: 1.5em;
     width: 1.5em; }
+  .send-my-list__send-button {
+    font-size: 1em; }
   .send-my-list__form-input-label {
     font-size: 2.5vw; }
   .form-controlsend-my-list__form-input {

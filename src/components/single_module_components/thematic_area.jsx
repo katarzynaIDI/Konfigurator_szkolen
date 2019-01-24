@@ -12,11 +12,10 @@ class ThematicArea extends Component {
   takeModuleNameFromSingleModule(value) {
     this.props.moveModuleNameUpToApp(value);
   }
-  //Ordering array by Thematic Area
+  //**** Ordering array by Thematic Area ****\\
   orderedModules = _.groupBy(this.props.modules, thematicArea => {
     return thematicArea.thematicArea;
   });
-
   render() {
     return (
       <div className="main-layout__modules-display">

@@ -21,22 +21,20 @@ class AdminMain extends Component {
       details: "",
       loading: true
     };
-
     this.addModuleToDataBase = this.addModuleToDataBase.bind(this);
     this.removeModuleFromDB = this.removeModuleFromDB.bind(this);
-    this.getModules - this.getModules.bind(this);
+    this.getModules = this.getModules.bind(this);
     this.addId = React.createRef();
     this.forceUpdate = this.forceUpdate.bind(this);
   }
   componentWillMount() {
-    //Preveting Firebase double initializing
+    //**** Preveting Firebase double initializing ****\\
     if (!firebase.apps.length) {
       firebase.initializeApp(DB_CONFIG);
     }
   }
-
   getModules() {
-    //Retrieving data from Firebase
+    //**** Retrieving data from Firebase ****\\
     let ref = firebase.database().ref();
     ref.once("value").then(dataSnapshot => {
       this.response = dataSnapshot.val()["modulesData"];
@@ -46,52 +44,51 @@ class AdminMain extends Component {
   componentDidMount() {
     this.getModules();
   }
-
   addModuleToDataBase(e) {
     e.preventDefault();
-    //Take string form the "details" and split it into array
+    //**** Take string form the "details" and split it into array ****\\
     this.toSplit = this.addDetails.value;
     this.splited = this.addDetails.value.split(";");
     this.addDetailsArray = [];
-    //Remove space before each element
+    //**** Remove space before each element ****\\
     this.splited.map(e =>
       e.charAt(0) === " "
         ? this.addDetailsArray.push(e.substring(1))
         : this.addDetailsArray.push(e)
     );
-    //Create new record in Firebase
+    //**** Create new record in Firebase ****\\
     let newModuleKey = firebase
       .database()
       .ref()
       .child("modulesData")
       .push().key;
-    //Take data from the form and prepeare to push them to Firebase
+    //**** Take data from the form and prepeare to push them to Firebase ****\\
     let postData = {
       name: this.addModuleName.value,
       thematicArea: this.addThematicArea.value,
       id: newModuleKey,
       details: this.addDetailsArray
     };
-    //Pushing data form the form to Firebase
+    //****  Pushing data from the form to Firebase ****\\
     let update = {};
     update["/modulesData/" + newModuleKey] = postData;
     firebase
       .database()
       .ref()
       .update(update);
-    //Rerendering
+    //**** Rerendering ****\\
     this.setState({ loading: true });
     this.getModules();
   }
   removeModuleFromDB(e, moduleDBKey) {
     e.preventDefault();
-    //Removing element based on Firebase key
+    //**** Removing element based on Firebase key ****\\
     firebase
       .database()
       .ref()
       .child("/modulesData/" + moduleDBKey)
       .remove();
-    //Rerendering
+    //**** Rerendering ****\\
     this.setState({ loading: true });
     this.getModules();
   }
