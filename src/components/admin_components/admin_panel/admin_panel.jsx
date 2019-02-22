@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import "./admin_panel.scss";
 import firebase from "firebase";
-import AdminLogin from "./admin_login";
-import AdminMain from "./admin_main";
+import AdminLogin from "../admin_login/admin_login";
+import AdminMain from "../admin_main/admin_main";
 import { Well, Button } from "react-bootstrap";
 
 class AdminPanel extends Component {

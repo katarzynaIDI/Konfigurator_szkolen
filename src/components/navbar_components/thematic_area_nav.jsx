@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import _ from "lodash";
+import "./thematic_area_nav.scss";
+import groupBy from "lodash.groupby";
 import { Link, animateScroll as scroller } from "react-scroll";
 import logoCPAB from "../../logos/logo_CPAB.png";
 
 class ThematicAreaNav extends Component {
   //**** Ordering array by Thematic Area ****\\
-  orderedModules = _.groupBy(this.props.modules, thematicArea => {
+  orderedModules = groupBy(this.props.modules, thematicArea => {
     return thematicArea.thematicArea;
   });
   //**** Scrolling to accurate thematic area ****\\
@@ -20,30 +21,31 @@ class ThematicAreaNav extends Component {
   render() {
     return (
       <div className="thematic-area-nav">
-        <ul>
+        <div className="thematic-area-nav__logo-wrapper">
           <img
             className="thematic-area-nav__logo"
             src={logoCPAB}
             alt="Logo Coaching People"
           />
-          <div className="thematic-area-nav__areas">
-            {Object.keys(this.orderedModules).map(e => (
-              <button className="thematic-area-nav__singleThematicArea" key={e}>
-                <Link
-                  activeClass="active"
-                  className={e}
-                  to={e}
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  //**** down here can reagulate how deep scroll down(in px) ****\\
-                  offset={-120}
-                >
-                  {e}
-                </Link>
-              </button>
-            ))}
-          </div>
+        </div>
+
+        <ul className="thematic-area-nav__areas">
+          {Object.keys(this.orderedModules).map(e => (
+            <li className="thematic-area-nav__single-thematic-area" key={e}>
+              <Link
+                activeClass="active"
+                className={e}
+                to={e}
+                spy={true}
+                smooth={true}
+                duration={500}
+                //**** down here can reagulate how deep scroll down(in px) ****\\
+                offset={-200}
+              >
+                {e}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     );

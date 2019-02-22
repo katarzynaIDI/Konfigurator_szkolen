@@ -1,4 +1,5 @@
 import React from "react";
+import "./footer.scss";
 import MapPin from "../../logos/map_pin.png";
 import Website from "../../logos/website.png";
 import Mail from "../../logos/mail.png";

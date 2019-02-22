@@ -1,0 +1,42 @@
+@import "../../../global.scss";
+.order-list {
+  grid-column: 2/3;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: $color-background-primary;
+  padding: 0 1vw 2vw 1vw;
+  border: 0.1vw double $color-cp-chosen;
+}
+.order-list__header {
+  border-bottom: $division-line;
+  font-size: 1.6vw;
+}
+.order-list__add-first-module-info {
+  font-size: 1.2vw !important;
+  &::before {
+    @include bullet($color-cp-blue, 0.5em);
+    content: "\A";
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+.order-list__single-day-close-day-button {
+  width: 90%;
+  font-size: 1.2vw;
+}
+
+@media (max-width: 700px) {
+  .order-list {
+    padding: 0 1.5vw 3vw 1.5vw;
+  }
+  .order-list__header {
+    font-size: 4vw;
+    margin-top: 10vw;
+  }
+  .order-list__add-first-module-info {
+    font-size: 2.5vw !important;
+  }
+}

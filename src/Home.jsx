@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import "./home.scss";
 import { Router } from "@reach/router";
 import firebase from "firebase";
 import { DB_CONFIG } from "./database/db_config";
 //import LandingPage from "./components/landingPageComponents/landing_page";
-import ThematicAreaNav from "./components/navbar_components/thematic_area_nav";
-import ThematicArea from "./components/single_module_components/thematic_area";
-import OrderList from "./components/order_list_components/order_list";
+import ThematicArea from "./components/single_module_components/thematic_area/thematic_area";
+import OrderList from "./components/order_list_components/order_list_main/order_list_main";
 import Footer from "./components/footer_components/footer";
-import AdminPanel from "./components/admin_components/admin_panel";
+import AdminPanel from "./components/admin_components/admin_panel/admin_panel";
 import Preloader from "./components/preloader_components/preloader";
 //import Logo from "./logos/logo_CPAB.png";
 
@@ -64,7 +64,6 @@ class Home extends Component {
         </Router>
         {/*<LandingPage />
         <img src={Logo} />*/}
-        <ThematicAreaNav modules={this.state.modules} />
         <div className="main-layout">
           <ThematicArea
             modules={modules}

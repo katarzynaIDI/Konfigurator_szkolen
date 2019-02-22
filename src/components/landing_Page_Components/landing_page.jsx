@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./landing_page.scss";
 import { Link, animateScroll as scroller } from "react-scroll";
 import logo_CPAB from "../../logos/logo_CPAB.png";
 import down_drop_arrow from "../../logos/down-drop-1.png";

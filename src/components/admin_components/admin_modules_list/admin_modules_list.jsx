@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import _ from "lodash";
+import "./admin_modules_list.scss";
+import groupBy from "lodash.groupby";
 import { Panel, Button } from "react-bootstrap";
 
 class ModulesList extends Component {
   //**** Ordering array by Thematic Area ****\\
-  orderedModules = _.groupBy(this.props.modules, thematicArea => {
+  orderedModules = groupBy(this.props.modules, thematicArea => {
     return thematicArea.thematicArea;
   });
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ShowModuleDetails from "./show_module_details";
+import "./single_module.scss";
+import ShowModuleDetails from "../show_module_details/show_module_details";
 
 class SingleModule extends Component {
   constructor(props) {

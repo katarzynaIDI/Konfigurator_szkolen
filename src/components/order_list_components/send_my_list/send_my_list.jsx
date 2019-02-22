@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./send_my_list.scss";
 import {
   Form,
   FormGroup,
@@ -611,12 +612,22 @@ class SendMyList extends Component {
               .join("")}</ul>`
       }`;
     //**** Send an e-mail ****\\
-    fetch(
-      `http://localhost:4005/send-email?recipient=${email.recipient}&sender=${
-        email.sender
-      }&topic=${email.subject}&html=${myhtml}&senderName=${senderName}`,
-      { mode: "no-cors" }
-    ).catch(err => console.log(err));
+    const emailData = {
+      recipient: email.recipient,
+      subject: email.subject,
+      html: myhtml,
+      senderName: senderName
+    };
+    fetch("https://konfiguratorszkolen.pl/send-email", {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(emailData)
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .then(error => console.log(error));
     //Info after sending e-mail
     alert(`Zamówienie zostało wysłane!
 Wkrótce skontaktujemy się z Państwem!`);

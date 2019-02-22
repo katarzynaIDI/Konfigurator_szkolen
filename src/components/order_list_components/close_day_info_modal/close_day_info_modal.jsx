@@ -1,4 +1,5 @@
 import React from "react";
+import "./close_day_info_modal.scss";
 import { Modal, Button } from "react-bootstrap";
 
 const CloseDayInfoModal = props => {
