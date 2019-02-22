@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./show_module_details.scss";
 import { Modal, Button } from "react-bootstrap";
 
 class ShowModuleDetails extends Component {

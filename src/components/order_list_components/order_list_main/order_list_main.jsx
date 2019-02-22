@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import "./order_list_main.scss";
 import { ListGroup, ListGroupItem, Button } from "react-bootstrap";
-import OrderListSingleDay from "./order_list_single_day";
-import SendMyList from "./send_my_list";
-import HelpModal from "./help_modal";
-import CloseDayTooltip from "./close_day_tooltip";
-import CloseDayOneInfoModal from "./close_day_one_info_modal";
-import CloseDayInfoModal from "./close_day_info_modal";
+import OrderListSingleDay from "../order_list_single_day/order_list_single_day";
+import SendMyList from "../send_my_list/send_my_list";
+import HelpModal from "../help_modal/help_modal";
+import CloseDayTooltip from "../close_day_tooltip/close_day_tooltip";
+import CloseDayOneInfoModal from "../close_day_one_info_modal/close_day_one_info_modal";
+import CloseDayInfoModal from "../close_day_info_modal/close_day_info_modal";
 
 class OrerList extends Component {
   constructor(props) {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./send_my_list.scss";
 import {
   Form,
   FormGroup,
@@ -627,20 +628,10 @@ class SendMyList extends Component {
       .then(res => res.json())
       .then(data => console.log(data))
       .then(error => console.log(error));
-    /*********************************** 
-    fetch(
-      `http://konfiguratorszkolen.pl/send-email?recipient=${
-        email.recipient
-      }&sender=${email.sender}&topic=${
-        email.subject
-      }&html=${myhtml}&senderName=${senderName}`,
-      { mode: "no-cors" }
-    ).catch(err => console.log(err));*/
     //Info after sending e-mail
     alert(`Zamówienie zostało wysłane!
 Wkrótce skontaktujemy się z Państwem!`);
   };
-  /* 79.96.230.119 */
   render() {
     const { email } = this.state;
     return (

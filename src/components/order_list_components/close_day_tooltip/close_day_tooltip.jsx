@@ -1,4 +1,5 @@
 import React from "react";
+import "./close_day_tooltip.scss";
 import { Tooltip, OverlayTrigger } from "react-bootstrap";
 
 const CloseDayTooltip = ({ id, children, tooltip }) => {

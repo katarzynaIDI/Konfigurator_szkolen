@@ -1,6 +1,7 @@
 import React from "react";
+import "./order_list_single_day.scss";
 import { ListGroupItem } from "react-bootstrap";
-import RemoveButton from "../../logos/remove_1.png";
+import RemoveButton from "../../../logos/remove_1.png";
 
 const OrderListSingleDay = props => {
   return (

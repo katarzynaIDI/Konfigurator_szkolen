@@ -1,0 +1,17 @@
+$color-background-secondary: rgb(224, 224, 224);
+$color-background-primary: rgb(249, 249, 249);
+$color-cp-yellow: rgb(254, 225, 35);
+$color-cp-blue: rgb(44, 86, 151);
+$color-cp-chosen: rgb(195, 195, 195);
+$color-single-module-hover: rgb(194, 207, 226);
+$color-help: rgba(231, 97, 7, 0.747);
+
+$division-line: 1px solid rgb(223, 222, 222);
+
+@mixin bullet($bullet-color, $size) {
+  height: $size;
+  width: $size;
+  align-self: center;
+  border-radius: 50%;
+  background-color: $bullet-color;
+}

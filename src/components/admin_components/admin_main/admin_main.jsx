@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import "./admin_main.scss";
 import firebase from "firebase";
-import { DB_CONFIG } from "../../database/db_config";
-import ModulesList from "./modules_list";
+import { DB_CONFIG } from "../../../database/db_config";
+import ModulesList from "../admin_modules_list/admin_modules_list";
 import {
   Col,
   FormGroup,
@@ -9,7 +10,7 @@ import {
   FormControl,
   Button
 } from "react-bootstrap";
-import Preloader from "../preloader_components/preloader";
+import Preloader from "../../preloader_components/preloader";
 
 class AdminMain extends Component {
   constructor(props) {
