@@ -1,15 +1,45 @@
 @import "../../../global.scss";
 .send-my-list__form-container {
   border-top: 5px double rgb(223, 222, 222);
-  margin-top: 50px !important;
+  margin-top: 40px !important;
   padding-top: 10px;
 }
 .send-my-list__form-input-label {
-  font-size: 1vw;
+  @include for-phone {
+    font-size: 14px;
+  }
+  @include for-tablet-portrait-and-up {
+    font-size: 16px;
+  }
+  @include for-tablet-landscape-and-up {
+    font-size: 18px;
+  }
+  @include for-desctop-and-up {
+    font-size: 16px;
+  }
+  @include for-big-screen-and-up {
+    font-size: 1.3vw;
+  }
 }
-.form-control .send-my-list__form-input {
-  font-size: 0.8vw;
+
+.form-control {
+  @include for-phone {
+    font-size: 8px;
+  }
+  @include for-tablet-portrait-and-up {
+    font-size: 10px;
+  }
+  @include for-tablet-landscape-and-up {
+    font-size: 12px;
+  }
+  @include for-desctop-and-up {
+    font-size: 14px;
+  }
+  @include for-big-screen-and-up {
+    font-size: 0.9vw;
+  }
 }
+
 .checkbox-inline {
   font-size: 0.8vw;
 }
@@ -18,27 +48,16 @@ input[type="checkbox"] {
 }
 .send-my-list__send-button {
   width: 90%;
-  font-size: 1.2vw;
-}
-
-@media (max-width: 700px) {
-  .send-my-list__send-button {
-    font-size: 1em;
+  @include for-phone {
+    font-size: 12px;
   }
-  .send-my-list__form-input-label {
-    font-size: 2.5vw;
+  @include for-tablet-portrait-and-up {
+    font-size: 18px;
   }
-  .form-control .send-my-list__form-input {
-    font-size: 2vw;
+  @include for-tablet-landscape-and-up {
+    font-size: 20px;
   }
-  .checkbox {
-    height: 1vw;
-    width: 1vw;
-  }
-  .checkbox-inline {
-    font-size: 2vw;
-  }
-  input[type="checkbox"] {
-    transform: scale(1);
+  @include for-big-screen-and-up {
+    font-size: 1.3vw;
   }
 }

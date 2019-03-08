@@ -1,0 +1,38 @@
+{
+  "modulesData": [
+    {
+      "thematicArea": "Obszar tematyczny 1",
+      "id": 1,
+      "name": "Budowanie postawy asertywnej",
+      "details": [
+        "Czym jest asertywność?",
+        "Asertywny Asertywny menedżer – charakterystyczne zachowania",
+        "Czy jestem asertywny? – diagnoza własnej postawy",
+        "Znaczenie i zalety zachowań asertywnych w komunikacji interpersonalnej",
+        "Rodzaje asertywności (miękka, twarda, negocjacyjna)",
+        "Dostosowanie rodzaju asertywności do rozmówcy",
+        "Wprowadzenie pojęcia - „Przesunięcie asertywne”",
+        "Rozpoznanie własnych zachowań - „Mapa asertywności”",
+        "Co to znaczy być biernym, manipulującym, agresywnym lub/i asertywnym?",
+        "Identyfikacja głównych blokad naszej asertywności",
+        "Społeczne konsekwencje asertywnego zachowania"
+      ]
+    },
+    {
+      "thematicArea": "Obszar tematyczny 2",
+      "id": 2,
+      "name": "Asertywne narzędzia",
+      "details": [
+        "Asertywna odmowa – zastosowanie trzyetapowej procedury",
+        "Technika „Zdartej płyty”",
+        "Wyrażanie pochwał i próśb",
+        "Egzekwowanie własnych praw i ustanawianie granic psychologicznych w relacjach z innymi ludźmi",
+        "Wyrażanie uczuć negatywnych i pozytywnych – przekazywanie konstruktywnej informacji zwrotnej",
+        "Radzenie sobie z krytyką",
+        "Technika „Jestem słoniem”",
+        "Technika „Jujitsu”",
+        "Obrona przed atakiem werbalnym – asertywny model zachowania"
+      ]
+    }
+  ]
+}

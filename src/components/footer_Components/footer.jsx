@@ -44,7 +44,7 @@ const Footer = () => {
         </p>
       </div>
       <div className="footer__copyright">
-        <p>Wszelkie prawa zastrzeżone, CPAB &#9400; 2016-2018</p>
+        <p>Wszelkie prawa zastrzeżone, CPAB &#9400; 2016-2019</p>
         <p hidden>
           Autor strony:{" "}
           <a

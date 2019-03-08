@@ -1,8 +1,12 @@
-$color-background-secondary: rgb(224, 224, 224);
-$color-background-primary: rgb(249, 249, 249);
+$color-background-secondary: rgb(245, 245, 245);
+$color-background-primary: rgb(255, 255, 255);
 $color-cp-yellow: rgb(254, 225, 35);
+$color-cp-yellow-dark: #b19d18;
+$color-cp-yellow-light: #fee74f;
 $color-cp-blue: rgb(44, 86, 151);
-$color-cp-chosen: rgb(195, 195, 195);
+$color-cp-blue-dark: #1e3c69;
+$color-cp-blue-light: #5677ab;
+$color-cp-chosen: rgb(240, 240, 240);
 $color-single-module-hover: rgb(194, 207, 226);
 $color-help: rgba(231, 97, 7, 0.747);
 
@@ -14,4 +18,38 @@ $division-line: 1px solid rgb(223, 222, 222);
   align-self: center;
   border-radius: 50%;
   background-color: $bullet-color;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Shree;
+  background-color: $color-background-secondary;
+  color: #393e41;
+}
+
+@mixin for-phone {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-and-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-and-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desctop-and-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-big-screen-and-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
 }

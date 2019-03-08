@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./help_modal.scss";
 import { Modal, Button } from "react-bootstrap";
-import infographic from "../../../logos/help_modal_infographic.jpeg";
+import infographic from "../../../logos/help_modal_infographic.PNG";
 import closeButton from "../../../logos/remove_1.png";
 
 class HelpModal extends Component {

@@ -10,7 +10,7 @@
     "cors": "^2.8.4",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "firebase": "^5.5.9",
+    "firebase": "^5.8.4",
     "lodash.groupby": "^4.6.0",
     "node-sass": "^4.11.0",
     "nodemailer": "^5.1.1",
@@ -20,15 +20,15 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-html-email": "^3.0.0",
-    "react-scripts": "2.1.5",
+    "react-scripts": "^2.1.5",
     "react-scroll": "^1.7.10"
   },
   "scripts": {
     "start-js": "react-scripts start",
+    "build-css": "node-sass --include-path ./src --include-path ./node_modules src/ -o src/",
     "mail-server": "node ./src/server/index.js",
     "start": "npm-run-all start-js",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -49,7 +49,7 @@
   "bugs": {
     "url": "https://github.com/KamilSobieraj/konfigurator/issues"
   },
-  "homepage": "www.konfiguratorszkolen.pl",
+  "homepage": "https://konfiguratorszkolen.pl",
   "browserslist": [
     ">0.2%",
     "not dead",

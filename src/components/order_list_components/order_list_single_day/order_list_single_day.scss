@@ -13,7 +13,21 @@
   margin-bottom: 10px;
 }
 .order-list__single-day-display-header {
-  font-size: 1.3vw;
+  @include for-phone {
+    font-size: 14px;
+  }
+  @include for-tablet-portrait-and-up {
+    font-size: 16px;
+  }
+  @include for-tablet-landscape-and-up {
+    font-size: 18px;
+  }
+  @include for-desctop-and-up {
+    font-size: 20px;
+  }
+  @include for-big-screen-and-up {
+    font-size: 1.3vw;
+  }
   animation: order-list-module-appear 1s forwards;
   &::before {
     @include bullet($color-cp-blue, 0.5em);
@@ -24,9 +38,23 @@
 }
 .list-group-item {
   display: inline-flex;
-  width: 90%;
+  width: 100%;
   border: none;
-  font-size: 1.1vw;
+  @include for-phone {
+    font-size: 12px;
+  }
+  @include for-tablet-portrait-and-up {
+    font-size: 14px;
+  }
+  @include for-tablet-landscape-and-up {
+    font-size: 16px;
+  }
+  @include for-desctop-and-up {
+    font-size: 18px;
+  }
+  @include for-big-screen-and-up {
+    font-size: 1.1vw;
+  }
 }
 .order_list__single-day-module-display {
   animation: order-list-module-appear 1s forwards;
@@ -49,25 +77,5 @@
     height: 1em;
     width: 1em;
     color: pink;
-  }
-}
-
-@media (max-width: 700px) {
-  .order-list__single-day-display {
-    margin-top: 15px;
-    margin-bottom: 10px;
-  }
-  .order-list__single-day-display-header {
-    font-size: 3vw;
-  }
-  .list-group-item {
-    display: inline-flex;
-    width: 85%;
-    font-size: 2.5vw;
-  }
-
-  .order-list__single-day-remove-button {
-    height: 1.5em;
-    width: 1.5em;
   }
 }

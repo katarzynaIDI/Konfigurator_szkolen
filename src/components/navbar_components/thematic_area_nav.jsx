@@ -33,6 +33,7 @@ class ThematicAreaNav extends Component {
           {Object.keys(this.orderedModules).map(e => (
             <li className="thematic-area-nav__single-thematic-area" key={e}>
               <Link
+                tabIndex="1"
                 activeClass="active"
                 className={e}
                 to={e}

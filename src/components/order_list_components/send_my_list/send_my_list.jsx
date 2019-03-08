@@ -30,8 +30,9 @@ class SendMyList extends Component {
   handleCheckboxChange(evt) {
     this.setState({ isCheckboxChecked: evt.target.checked });
   }
-  sendEmail = _ => {
+  sendEmail = e => {
     //**** DESTRUCTURING ****\\
+    e.preventDefault();
     const { email } = this.state;
     const {
       chosenModulesNames,
@@ -612,23 +613,42 @@ class SendMyList extends Component {
               .join("")}</ul>`
       }`;
     //**** Send an e-mail ****\\
+    /*
+    const data = new URLSearchParams(formElement);
+    const options = {
+      method: "POST",
+      body: data
+    };
+    fetch("http://konfiguratorszkolen.pl/send-email", options)
+      .then(response => {
+        if (response.status !== 200) {
+          return Promise.reject(response);
+        }
+        return response.json();
+      })
+      .then(json => console.log(json))
+      .catch(error => console.log(error));*/
     const emailData = {
       recipient: email.recipient,
       subject: email.subject,
       html: myhtml,
       senderName: senderName
     };
-    fetch("https://konfiguratorszkolen.pl/send-email", {
+    let formData = new FormData();
+    formData.append("emailData", JSON.stringify(emailData));
+    fetch("/send-email", {
       method: "POST",
-      mode: "cors",
-      credentials: "same-origin",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(emailData)
+      //mode: "same-origin",
+      //credentials: "same-origin",
+      body: formData
     })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .then(error => console.log(error));
-    //Info after sending e-mail
+      //.then(res => res.json())
+      .then(res => res.text())
+      .then(text => console.log(text))
+      //.then(data => console.log(data))
+      .catch(error => console.log(error));
+    //Info after sending e-mail;
+    console.log(formData);
     alert(`Zamówienie zostało wysłane!
 Wkrótce skontaktujemy się z Państwem!`);
   };

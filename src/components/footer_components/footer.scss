@@ -7,8 +7,30 @@
 .footer__contact-info {
   padding-top: 1.2em;
   padding-bottom: 1.2em;
-  padding-left: 40%;
-  font-size: 1.5vw;
+
+  @include for-phone {
+    font-size: 22px;
+    padding-left: 10%;
+  }
+  @include for-tablet-portrait-and-up {
+    font-size: 24px;
+    padding-left: 10%;
+  }
+  @include for-tablet-landscape-and-up {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24px;
+    & > a,
+    p {
+      margin-left: 40px;
+    }
+  }
+  @include for-desctop-and-up {
+    font-size: 28px;
+  }
+  @include for-big-screen-and-up {
+    font-size: 1.3vw;
+  }
   & * {
     margin-top: 10px;
   }
@@ -21,6 +43,16 @@
 .footer__contact-info-icon {
   height: 2vw;
   width: 2vw;
+  @include for-phone {
+    height: 22px;
+    width: 22px;
+    margin-right: 10px;
+  }
+  @include for-tablet-portrait-and-up {
+    height: 26px;
+    width: 26px;
+    margin-right: 10px;
+  }
   margin-top: 0;
   margin-right: 0.5vw;
 }
@@ -29,7 +61,21 @@
   border-top: 1px solid ghostwhite;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 0.5vw;
+  @include for-phone {
+    font-size: 10px;
+  }
+  @include for-tablet-portrait-and-up {
+    font-size: 12px;
+  }
+  @include for-tablet-landscape-and-up {
+    font-size: 14px;
+  }
+  @include for-desctop-and-up {
+    font-size: 16px;
+  }
+  @include for-big-screen-and-up {
+    font-size: 1vw;
+  }
   color: rgb(168, 168, 168);
   & p {
     & a {
@@ -37,30 +83,5 @@
       color: rgb(168, 168, 168);
     }
     margin-left: 10px;
-  }
-}
-@media (max-width: 700px) {
-  .footer__contact-info {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 10%;
-    font-size: 5vw;
-  }
-  .footer__contact-info-icon {
-    height: 5vw;
-    width: 5vw;
-    margin-right: 3vw;
-  }
-
-  .footer__copyright {
-    font-size: 0.5vw;
-    color: rgb(168, 168, 168);
-    & p {
-      & a {
-        text-decoration: none;
-        color: rgb(168, 168, 168);
-      }
-      margin-left: 10px;
-    }
   }
 }

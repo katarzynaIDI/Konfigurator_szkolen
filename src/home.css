@@ -1,0 +1,9 @@
+.main-layout {
+  display: grid;
+  grid-template-columns: 70vw 30vw;
+  grid-template-rows: 15vh auto; }
+
+@media (max-width: 700px) {
+  .main-layout {
+    grid-template-columns: 60vw 40vw;
+    grid-template-rows: 15vh auto; } }

@@ -13,14 +13,28 @@
 .order-list__help {
   float: right;
   clear: both;
-  background-color: $color-help;
+  background-color: $color-cp-yellow-light;
   list-style: none;
-  font-size: 1vw;
   padding: 5px;
   padding-right: 20px;
   animation: help-animation 4s ease-in-out infinite;
   &:hover {
     cursor: pointer;
+  }
+  @include for-phone {
+    font-size: 10px;
+  }
+  @include for-tablet-portrait-and-up {
+    font-size: 12px;
+  }
+  @include for-tablet-landscape-and-up {
+    font-size: 14px;
+  }
+  @include for-desctop-and-up {
+    font-size: 16px;
+  }
+  @include for-big-screen-and-up {
+    font-size: 1.1vw;
   }
 }
 .help-modal__infograpgic {
@@ -39,13 +53,4 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-}
-
-@media (max-width: 700px) {
-  .order-list__help {
-    font-size: 2vw;
-    padding-right: 30px;
-  }
-}
-@media (min-width: 1000px) {
 }
