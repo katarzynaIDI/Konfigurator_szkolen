@@ -1,14 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Shree;
-  background-color: #e0e0e0; }
-
-/*
-@font-face {
-  font-family: "Shree";
-  src: url(./fonts/font.css);
-}*/
 .footer {
   background-color: #6c6c6c;
   opacity: 0.8;
@@ -16,9 +5,29 @@ body {
 
 .footer__contact-info {
   padding-top: 1.2em;
-  padding-bottom: 1.2em;
-  padding-left: 40%;
-  font-size: 1.5vw; }
+  padding-bottom: 1.2em; }
+  @media (max-width: 599px) {
+    .footer__contact-info {
+      font-size: 22px;
+      padding-left: 10%; } }
+  @media (min-width: 600px) {
+    .footer__contact-info {
+      font-size: 24px;
+      padding-left: 10%; } }
+  @media (min-width: 900px) {
+    .footer__contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 24px; }
+      .footer__contact-info > a,
+      .footer__contact-info p {
+        margin-left: 40px; } }
+  @media (min-width: 1200px) {
+    .footer__contact-info {
+      font-size: 28px; } }
+  @media (min-width: 1800px) {
+    .footer__contact-info {
+      font-size: 1.3vw; } }
   .footer__contact-info * {
     margin-top: 10px; }
   .footer__contact-info a {
@@ -31,34 +40,39 @@ body {
   width: 2vw;
   margin-top: 0;
   margin-right: 0.5vw; }
+  @media (max-width: 599px) {
+    .footer__contact-info-icon {
+      height: 22px;
+      width: 22px;
+      margin-right: 10px; } }
+  @media (min-width: 600px) {
+    .footer__contact-info-icon {
+      height: 26px;
+      width: 26px;
+      margin-right: 10px; } }
 
 .footer__copyright {
   border-top: 1px solid ghostwhite;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 0.5vw;
   color: #a8a8a8; }
+  @media (max-width: 599px) {
+    .footer__copyright {
+      font-size: 10px; } }
+  @media (min-width: 600px) {
+    .footer__copyright {
+      font-size: 12px; } }
+  @media (min-width: 900px) {
+    .footer__copyright {
+      font-size: 14px; } }
+  @media (min-width: 1200px) {
+    .footer__copyright {
+      font-size: 16px; } }
+  @media (min-width: 1800px) {
+    .footer__copyright {
+      font-size: 1vw; } }
   .footer__copyright p {
     margin-left: 10px; }
     .footer__copyright p a {
       text-decoration: none;
       color: #a8a8a8; }
-
-@media (max-width: 700px) {
-  .footer__contact-info {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 10%;
-    font-size: 5vw; }
-  .footer__contact-info-icon {
-    height: 5vw;
-    width: 5vw;
-    margin-right: 3vw; }
-  .footer__copyright {
-    font-size: 0.5vw;
-    color: #a8a8a8; }
-    .footer__copyright p {
-      margin-left: 10px; }
-      .footer__copyright p a {
-        text-decoration: none;
-        color: #a8a8a8; } }

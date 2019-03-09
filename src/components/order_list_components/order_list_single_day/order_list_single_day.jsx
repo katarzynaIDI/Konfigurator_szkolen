@@ -7,10 +7,10 @@ const OrderListSingleDay = props => {
   return (
     <div className="order-list__single-day-display">
       <p className="order-list__single-day-display-header">{props.day}</p>
-      {props.chosenModulesNames.map(e => (
+      {props.chosenModulesNames.map((e, i) => (
         <ListGroupItem
           className="order_list__single-day-module-display"
-          key={e}
+          key={'order-list'+i}
         >
           {e + " "}
           <div

@@ -5,23 +5,6 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-.main-layout__areas-display {
-  @include for-phone {
-    margin-top: calc(140px - 10vw);
-  }
-  @include for-tablet-portrait-and-up {
-    margin-top: calc(200px - 10vw);
-  }
-  @include for-tablet-landscape-and-up {
-    margin-top: 10vw;
-  }
-  @include for-desctop-and-up {
-    margin-top: 10vw;
-  }
-  @include for-big-screen-and-up {
-    margin-top: 10vw;
-  }
-}
 .thematic-area-display {
   border-bottom: $division-line;
   padding: 2.2vw 1vw 1.3vw 1vw;

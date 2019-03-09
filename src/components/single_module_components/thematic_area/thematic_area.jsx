@@ -24,10 +24,10 @@ class ThematicArea extends Component {
         <ThematicAreaNav modules={this.props.modules} />
         <div className="main-layout__areas-display">
           {this.orderedModules &&
-            Object.keys(this.orderedModules).map(e => {
+            Object.keys(this.orderedModules).map((e, i) => {
               return (
-                <div key={e} className="thematic-area-display">
-                  <h3 key={e} id={e}>
+                <div key={`thematic-area-modulev-${i}`} className="thematic-area-display">
+                  <h3 id={e}>
                     <span>{e}</span>
                   </h3>
                   <div className="main-layout__single-modules-display">

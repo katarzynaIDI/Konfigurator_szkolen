@@ -10,12 +10,15 @@ class SingleModule extends Component {
     this.isButtonDisabled = this.isButtonDisabled.bind(this);
   }
   handleAddModuleToList() {
-    this.props.moveModuleNameUpToThematicArea(this.props.name);
+    const {name, chosenModulesNames} = this.props;
+    console.log(this.isButtonDisabled(name));
+    if (chosenModulesNames.includes(name)) this.props.moveModuleNameUpToThematicArea(this.props.name);
   }
-  isButtonDisabled = (chosenModulesNames, name) =>
-    chosenModulesNames.includes(name);
+
+  isButtonDisabled = (name) => this.props.chosenModulesNames.includes(name);
+
   render() {
-    const { chosenModulesNames, name } = this.props;
+    const { name } = this.props;
     return (
       <div
         className={
@@ -37,7 +40,7 @@ class SingleModule extends Component {
             {this.props.name}
           </div>
           <div className="single-module__icon-wrapper">
-            {this.isButtonDisabled(chosenModulesNames, name) 
+            {this.isButtonDisabled(name) 
               ? <Icon className={"single-module__icon single-module__icon--add"} name={'icon-checkmark'} />
               : <Icon className={"single-module__icon single-module__icon--check"} name={'icon-add'} />
             }

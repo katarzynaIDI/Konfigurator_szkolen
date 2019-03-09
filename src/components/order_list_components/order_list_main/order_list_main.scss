@@ -1,14 +1,23 @@
 @import "../../../global.scss";
 .order-list {
   grid-column: 2/3;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 77px;
+  right:0;
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: $color-background-primary;
   padding: 0 1vw 2vw 1vw;
   border: 0.1vw double $color-cp-chosen;
+
+  width: 40vw;
+  grid-template-rows: 15vh auto;
+
+  @include for-tablet-portrait-and-up {
+    width: 30vw;
+  }
+
 }
 .order-list__header {
   border-bottom: 1px solid $color-cp-blue-light;

@@ -1,14 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Shree;
-  background-color: #e0e0e0; }
-
-/*
-@font-face {
-  font-family: "Shree";
-  src: url(./fonts/font.css);
-}*/
 @keyframes order-list-module-appear {
   from {
     opacity: 0; }
@@ -16,13 +5,27 @@ body {
     opacity: 1; } }
 
 .order-list__single-day-display {
-  border-bottom: 1px solid #dfdede;
+  border-bottom: 1px solid #030303;
   margin-top: 25px;
   margin-bottom: 10px; }
 
 .order-list__single-day-display-header {
-  font-size: 1.3vw;
   animation: order-list-module-appear 1s forwards; }
+  @media (max-width: 599px) {
+    .order-list__single-day-display-header {
+      font-size: 14px; } }
+  @media (min-width: 600px) {
+    .order-list__single-day-display-header {
+      font-size: 16px; } }
+  @media (min-width: 900px) {
+    .order-list__single-day-display-header {
+      font-size: 18px; } }
+  @media (min-width: 1200px) {
+    .order-list__single-day-display-header {
+      font-size: 20px; } }
+  @media (min-width: 1800px) {
+    .order-list__single-day-display-header {
+      font-size: 1.3vw; } }
   .order-list__single-day-display-header::before {
     height: 0.5em;
     width: 0.5em;
@@ -35,9 +38,23 @@ body {
 
 .list-group-item {
   display: inline-flex;
-  width: 90%;
-  border: none;
-  font-size: 1.1vw; }
+  width: 100%;
+  border: none; }
+  @media (max-width: 599px) {
+    .list-group-item {
+      font-size: 12px; } }
+  @media (min-width: 600px) {
+    .list-group-item {
+      font-size: 14px; } }
+  @media (min-width: 900px) {
+    .list-group-item {
+      font-size: 16px; } }
+  @media (min-width: 1200px) {
+    .list-group-item {
+      font-size: 18px; } }
+  @media (min-width: 1800px) {
+    .list-group-item {
+      font-size: 1.1vw; } }
 
 .order_list__single-day-module-display {
   animation: order-list-module-appear 1s forwards; }
@@ -62,17 +79,3 @@ body {
     height: 1em;
     width: 1em;
     color: pink; }
-
-@media (max-width: 700px) {
-  .order-list__single-day-display {
-    margin-top: 15px;
-    margin-bottom: 10px; }
-  .order-list__single-day-display-header {
-    font-size: 3vw; }
-  .list-group-item {
-    display: inline-flex;
-    width: 85%;
-    font-size: 2.5vw; }
-  .order-list__single-day-remove-button {
-    height: 1.5em;
-    width: 1.5em; } }

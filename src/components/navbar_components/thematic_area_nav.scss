@@ -3,6 +3,7 @@
   position: fixed;
   top: 0; 
   left: 0; 
+  right: 0;
   margin: 0;
   z-index: 2;
   background-color: $color-background-primary;
@@ -19,20 +20,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
-  width: 69vw;
-  //font-size: 1.2vw;
   box-shadow: 0 2px 1px 0px rgb(235, 235, 235);
   //border-radius: 0 0 5px 5px;
   //padding: 5px;
   @include for-phone {
-    width: 60vw;
     font-size: 14px;
     padding: 4px;
-  }
-  @include for-tablet-portrait-and-up {
-    width: 70.1vw;
-    font-size: 12px;
   }
   @include for-tablet-landscape-and-up {
     font-size: 14px;
@@ -40,16 +33,14 @@
   @include for-desctop-and-up {
     font-size: 18px;
   }
-  @include for-big-screen-and-up {
-    font-size: 1.2vw;
-  }
 }
 .thematic-area-nav__logo-wrapper {
-  @include for-tablet-landscape-and-up {
-    display: block;
-  }
+  width: 120px;
+  display: flex;
+  align-items: center;
 }
 .thematic-area-nav__logo {
+  max-width: 100%;
   @include for-phone {
     //display: none;
   }
@@ -65,9 +56,6 @@
   list-style: none;
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
   flex: 1;
 
   @include for-phone {
@@ -79,36 +67,52 @@
 }
 .thematic-area-nav__single-thematic-area {
   padding: 0.6em 1em;
-  margin-bottom: 0.6em;
   border-top: none;
   border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  min-height: 77px;
   //border-right: 1px solid rgb(218, 218, 218);
   //border-left: 1px solid rgb(218, 218, 218);
   //border-radius: 5px;
   //box-shadow: 1px 1px 1px;
   background-color: $color-background-primary;
-  & a {
+  a {
     text-decoration: none;
-    font-weight: bold;
     color: #393e41;
+    &:hover, &:focus, &:active, &:visited, &.active {
+      cursor: pointer;
+      text-decoration: none;
+      &:before {
+        transition: transform .2s ease;
+        transform: scale(1,1);
+        background: $color-cp-yellow;
+      }
+    }
+    &.active {
+      &:before {
+        background: $color-cp-blue;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: scale(0,1);
+      transform-origin: left;
+      height: 4px;
+      
+    }
   }
   & > a:focus {
     outline: none;
-    color: $color-cp-blue;
-    text-decoration: underline;
-    &:before {
-      @include bullet($color-cp-yellow, 0.6em);
-      margin-right: 5px;
-      content: "\A";
-      display: inline-block;
-      align-content: center;
-    }
   }
-  &:hover {
-    cursor: pointer;
-    color: $color-cp-blue;
-    text-decoration: underline;
-  }
+  
   @include for-phone {
     align-items: center;
   }
