@@ -1,11 +1,12 @@
 @import "../../../global.scss";
 
 .order-list__help {
-  margin: 0 0 4px 0;
+  margin: 6px 0;  
   padding: 4px 0;
   background: transparent;
   border: none;
   vertical-align: middle;
+  display: block;
   @include for-phone {
     font-size: 10px;
   }
@@ -34,14 +35,14 @@
 }
 
 @keyframes shake {
-  0% { transform:rotate(-10deg) }
- 1.78571% { transform:rotate(10deg) }
- 3.57143% { transform:rotate(-10deg) }
- 5.35714% { transform:rotate(10deg) }
- 7.14286% { transform:rotate(-10deg) }
- 8.92857% { transform:rotate(10deg) }
- 10.71429% { transform:rotate(-10deg) }
- 100% { transform:rotate(-10deg) }
+  0% { transform:rotate(0) }
+ 1.78571% { transform:rotate(20deg) }
+ 3.57143% { transform:rotate(-20deg) }
+ 5.35714% { transform:rotate(20deg) }
+ 7.14286% { transform:rotate(-20deg) }
+ 8.92857% { transform:rotate(20deg) }
+ 10.71429% { transform:rotate(0) }
+ 100% { transform:rotate(0) }
 }
 
 .help-modal__infograpgic {
