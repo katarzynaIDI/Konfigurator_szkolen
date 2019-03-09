@@ -11,3 +11,12 @@ To create the project I used:
 To improve:
 
 - add Redux
+
+
+<!--
+    add instructions for launching app, 
+    add instructions for app deployment (maybe?)
+    add prerequisitess
+
+    nie wiem co to vim.exe.stackdump ale na oko nie jestem pewna czy powinien byc w repo
+-->

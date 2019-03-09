@@ -7,7 +7,7 @@ import { DB_CONFIG } from "./database/db_config";
 import ThematicArea from "./components/single_module_components/thematic_area/thematic_area";
 import OrderList from "./components/order_list_components/order_list_main/order_list_main";
 import Footer from "./components/footer_components/footer";
-import AdminPanel from "./components/admin_Components/admin_panel/admin_panel";
+import AdminPanel from "./components/admin_components/admin_panel/admin_panel";
 import Preloader from "./components/preloader_components/preloader";
 import Form from "./components/form/form";
 //import Logo from "./logos/logo_CPAB.png";

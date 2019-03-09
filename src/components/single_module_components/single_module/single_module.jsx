@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./single_module.scss";
 import ShowModuleDetails from "../show_module_details/show_module_details";
+import Icon from "../../ui/icons/icon";
 
 class SingleModule extends Component {
   constructor(props) {
@@ -26,20 +27,23 @@ class SingleModule extends Component {
         <ShowModuleDetails
           details={this.props.details}
           name={this.props.name}
-        />{" "}
-        <div
-          className="single-module__module-name-display-container"
+        />
+
+        <button
+          className="single-module__tile-button"
           onClick={this.handleAddModuleToList}
         >
-          <div className="single-module__module-name-display-title">
+          <div className="single-module__tile-title">
             {this.props.name}
           </div>
-          <div className="single-module__add-button">
-            {this.isButtonDisabled(chosenModulesNames, name) === true
-              ? "Dodano!"
-              : "Dodaj moduł"}
+          <div className="single-module__icon-wrapper">
+            {this.isButtonDisabled(chosenModulesNames, name) 
+              ? <Icon className={"single-module__icon single-module__icon--add"} name={'icon-checkmark'} />
+              : <Icon className={"single-module__icon single-module__icon--check"} name={'icon-add'} />
+            }
+            
           </div>
-        </div>
+        </button>
       </div>
     );
   }

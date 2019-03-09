@@ -1,6 +1,8 @@
 @import "../../global.scss";
 .thematic-area-nav {
   position: fixed;
+  top: 0; 
+  left: 0; 
   margin: 0;
   z-index: 2;
   background-color: $color-background-primary;
@@ -25,15 +27,12 @@
   //padding: 5px;
   @include for-phone {
     width: 60vw;
-    margin-left: -10px;
-    font-size: 10px;
+    font-size: 14px;
     padding: 4px;
-    font-size: 10px;
   }
   @include for-tablet-portrait-and-up {
     width: 70.1vw;
     font-size: 12px;
-    margin-left: -10px;
   }
   @include for-tablet-landscape-and-up {
     font-size: 14px;
@@ -48,22 +47,18 @@
 .thematic-area-nav__logo-wrapper {
   @include for-tablet-landscape-and-up {
     display: block;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
 .thematic-area-nav__logo {
   @include for-phone {
-    display: none;
+    //display: none;
   }
   @include for-tablet-portrait-and-up {
-    display: none;
+    //display: none;
   }
   @include for-tablet-landscape-and-up {
     display: block;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 4vw;
+   //height: 4vw;
   }
 }
 .thematic-area-nav__areas {
@@ -115,11 +110,9 @@
     text-decoration: underline;
   }
   @include for-phone {
-    max-width: 47%;
     align-items: center;
   }
   @include for-tablet-portrait-and-up {
-    max-width: 40%;
     align-items: center;
   }
 }

@@ -80,7 +80,7 @@
   display: grid;
   clear: both;
   grid-gap: 1.5vw;
-  margin-top: 1.5vw;
+  margin: 50px 0;
   @include for-phone {
     grid-template-columns: repeat(auto-fit, minmax(20vw, 25vw));
   }

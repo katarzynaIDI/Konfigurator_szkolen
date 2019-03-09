@@ -1,15 +1,42 @@
 @import "../../../global.scss";
-@keyframes single-module-details {
-  from {
-    background: $color-background-primary;
-    background: initial;
-    color: black;
+
+
+$size: 32px;
+
+
+.single-module {
+  &__details-button {
+    border: none;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: -7px;
+    right: 32px;
+    z-index: 1;
+    background: #fff;
+    transform: scale(1);
+    transition: transform $duration $timing;
+    border-radius: 50%;
+    cursor: pointer;
+  
+    box-shadow: $box-shadow;
+    &:active, &:hover, &:focus {
+      transform: scale(1.2);
+    }
+    
   }
-  to {
-    background: $color-cp-blue;
-    color: ghostwhite;
+  &__icon {
+    width: 100%;
+    height: 100%;
+    &--details {
+      fill: $color-cp-blue;
+    }
   }
 }
+
 .single-module__details-modal-header {
   display: inline-flex;
   font-size: 1.4em;

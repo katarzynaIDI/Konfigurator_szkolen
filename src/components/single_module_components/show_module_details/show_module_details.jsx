@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./show_module_details.scss";
 import { Modal, Button } from "react-bootstrap";
+import Icon from "../../ui/icons/icon";
 
 class ShowModuleDetails extends Component {
   constructor(props, context) {
@@ -20,10 +21,10 @@ class ShowModuleDetails extends Component {
   render() {
     const details = this.props.details;
     return (
-      <div>
-        <div className="single-module__details" onClick={this.handleShow}>
-          <div className="single-module__details-info-display">Szczegóły </div>
-        </div>
+      <React.Fragment>
+        <button className="single-module__details-button" onClick={this.handleShow}>
+          <Icon className={"single-module__icon single-module__icon--details"} name={'icon-details'} />
+        </button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title className="single-module__details-modal-header">
@@ -45,7 +46,7 @@ class ShowModuleDetails extends Component {
             <Button onClick={this.handleClose}>Zamknij</Button>
           </Modal.Footer>
         </Modal>
-      </div>
+      </React.Fragment>
     );
   }
 }

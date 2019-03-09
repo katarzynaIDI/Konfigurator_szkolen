@@ -1,13 +1,19 @@
-//@import "./global.scss";
-/*
+@import "./global.scss";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900&subset=latin-ext');
+
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Shree;
-  background-color: rgb(224, 224, 224);
+  font-family: 'Lato', sans-serif;
+
+  background-color: $color-background-secondary;
+  color: #393e41;
 }
-@font-face {
-  font-family: "Shree";
-  src: url(./fonts/font.css);
+
+#root {
+  //TODO find out why bootstrap styles override app styles and refactor
+  
+  font-family: 'Lato', sans-serif;
+  
 }
-*/
