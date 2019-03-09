@@ -493,8 +493,12 @@ class OrerList extends Component {
             this.dayNineDuration));
     return (
       <div className="order-list">
-        <HelpModal />
-        <h2 className="order-list__header">Twoje szkolenie:</h2>
+        
+        <h2 className="order-list__header">
+            Twoje szkolenie:
+            <HelpModal />
+        </h2>
+        
         <ListGroup>
           <CloseDayOneInfoModal
             showCloseDayOneInfo={this.state.showCloseDayOneInfo}

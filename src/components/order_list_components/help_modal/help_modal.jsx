@@ -3,6 +3,7 @@ import "./help_modal.scss";
 import { Modal, Button } from "react-bootstrap";
 import infographic from "../../../logos/help_modal_infographic.PNG";
 import closeButton from "../../../logos/remove_1.png";
+import Icon from '../../ui/icons/icon';
 
 class HelpModal extends Component {
   constructor(props, context) {
@@ -21,10 +22,11 @@ class HelpModal extends Component {
   }
   render() {
     return (
-      <div>
-        <div className="order-list__help" onClick={this.handleShow}>
+      <React.Fragment>
+        <button className="order-list__help" onClick={this.handleShow}>
+          <Icon className={"help-icon"} name={'icon-help'} /> 
           Jak skomponować szkolenie?
-        </div>
+        </button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>
             <Button
@@ -40,7 +42,7 @@ class HelpModal extends Component {
             />
           </Modal.Body>
         </Modal>
-      </div>
+      </React.Fragment>
     );
   }
 }

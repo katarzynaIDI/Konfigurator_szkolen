@@ -1,26 +1,11 @@
 @import "../../../global.scss";
-@keyframes help-animation {
-  from {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  to {
-    transform: scale(1);
-  }
-}
+
 .order-list__help {
-  float: right;
-  clear: both;
-  background-color: $color-cp-yellow-light;
-  list-style: none;
-  padding: 5px;
-  padding-right: 20px;
-  animation: help-animation 4s ease-in-out infinite;
-  &:hover {
-    cursor: pointer;
-  }
+  margin: 0 0 4px 0;
+  padding: 4px 0;
+  background: transparent;
+  border: none;
+  vertical-align: middle;
   @include for-phone {
     font-size: 10px;
   }
@@ -37,6 +22,28 @@
     font-size: 1.1vw;
   }
 }
+
+.help-icon {
+  height: 1.2em;
+  width: 1.2em;
+  display: inline-block;
+  fill: $color-cp-yellow;
+  margin-right: 4px;
+  vertical-align: bottom;
+  animation: shake 4.72s ease infinite;
+}
+
+@keyframes shake {
+  0% { transform:rotate(-10deg) }
+ 1.78571% { transform:rotate(10deg) }
+ 3.57143% { transform:rotate(-10deg) }
+ 5.35714% { transform:rotate(10deg) }
+ 7.14286% { transform:rotate(-10deg) }
+ 8.92857% { transform:rotate(10deg) }
+ 10.71429% { transform:rotate(-10deg) }
+ 100% { transform:rotate(-10deg) }
+}
+
 .help-modal__infograpgic {
   width: 100%;
 }
